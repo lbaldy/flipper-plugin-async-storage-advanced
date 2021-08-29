@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This plugin is designed to work with Flipper (https://fbflipper.com/) and Async Storage (https://github.com/react-native-async-storage/async-storage) libarary.
+This plugin is designed to work with Flipper (https://fbflipper.com/) and Async Storage (https://github.com/react-native-async-storage/async-storage) library.
 
 The plugin provides standard read/write/delete/update operations on the Async Storage keys in React Native applications.
 
