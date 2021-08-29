@@ -14,6 +14,7 @@
   ],
   "icon": "apps",
   "title": "Advanced Async Storage",
+  "description": "CRUD Async Storage Flipper plugin",
   "scripts": {
     "lint": "flipper-pkg lint",
     "prepack": "flipper-pkg lint && flipper-pkg bundle",
