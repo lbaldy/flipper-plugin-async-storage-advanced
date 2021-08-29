@@ -1,0 +1,45 @@
+{
+  "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
+  "name": "flipper-plugin-async-storage-advanced",
+  "id": "FlipperAsyncStorageAdvanced",
+  "version": "1.0.0",
+  "pluginType": "client",
+  "main": "dist/bundle.js",
+  "flipperBundlerEntry": "src/index.tsx",
+  "license": "MIT",
+  "keywords": [
+    "flipper-plugin",
+    "async-storage",
+    "flipper"
+  ],
+  "icon": "apps",
+  "title": "Advanced Async Storage",
+  "scripts": {
+    "lint": "flipper-pkg lint",
+    "prepack": "flipper-pkg lint && flipper-pkg bundle",
+    "build": "flipper-pkg bundle",
+    "watch": "flipper-pkg bundle --watch",
+    "test": "jest --no-watchman"
+  },
+  "peerDependencies": {
+    "antd": "latest",
+    "flipper-plugin": "0.100.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "latest",
+    "@babel/preset-typescript": "latest",
+    "@testing-library/react": "latest",
+    "@types/jest": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "antd": "latest",
+    "flipper-pkg": "0.100.0",
+    "flipper-plugin": "0.100.0",
+    "jest": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "immutability-helper": "^3.1.1",
+    "lodash": "^4.17.21"
+  }
+}

@@ -1,0 +1,22 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'lerna',
+0 silly argv   name: 'flipper-plugin-async-storage-advanced'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/lbaldy/projects/async-storage-lerna
+3 warn ENOREMOTE No git remote found, skipping repository property
+4 error Error: canceled
+4 error     at Interface.<anonymous> (/Users/lbaldy/.nvm/versions/node/v14.17.0/lib/node_modules/lerna/node_modules/read/lib/read.js:66:13)
+4 error     at Interface.emit (events.js:376:20)
+4 error     at Interface._ttyWrite (readline.js:880:16)
+4 error     at ReadStream.onkeypress (readline.js:213:10)
+4 error     at ReadStream.emit (events.js:376:20)
+4 error     at emitKeys (internal/readline/utils.js:345:14)
+4 error     at emitKeys.next (<anonymous>)
+4 error     at ReadStream.onData (readline.js:1149:36)
+4 error     at ReadStream.emit (events.js:376:20)
+4 error     at addChunk (internal/streams/readable.js:309:12)
+4 error     at readableAddChunk (internal/streams/readable.js:284:9)
+4 error     at ReadStream.Readable.push (internal/streams/readable.js:223:10)

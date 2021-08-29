@@ -1,0 +1,29 @@
+{
+  "name": "rn-flipper-async-storage-advanced",
+  "version": "0.0.0",
+  "description": "React Native part of the flipper-plugin-async-storage-advanced",
+  "keywords": [
+    "flipper-plugin",
+    "flipper",
+    "async-storage"
+  ],
+  "author": "lbaldy",
+  "homepage": "https://github.com/lbaldy/flipper-plugin-async-storage-advanced.git",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.7",
+    "react": "^17.0.2",
+    "react-native-flipper": "0.100.0"
+  }
+}
