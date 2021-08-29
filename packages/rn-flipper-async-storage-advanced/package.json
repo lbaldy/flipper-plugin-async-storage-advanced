@@ -1,6 +1,6 @@
 {
   "name": "rn-flipper-async-storage-advanced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native part of the flipper-plugin-async-storage-advanced",
   "keywords": [
     "flipper-plugin",
