@@ -10,7 +10,7 @@ The plugin provides standard read/write/delete/update operations on the Async St
 
 ## Installation
 
-Simiraily to other Flipper plugins for React Native, this one comes in two packages.
+Similarly to other Flipper plugins for React Native, this one comes in two packages.
 
 ### Client package
 
