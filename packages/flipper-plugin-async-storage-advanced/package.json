@@ -10,11 +10,12 @@
   "keywords": [
     "flipper-plugin",
     "async-storage",
+    "mmkv",
     "flipper"
   ],
   "icon": "apps",
-  "title": "Advanced Async Storage",
-  "description": "CRUD Async Storage Flipper plugin",
+  "title": "Advanced Storage",
+  "description": "CRUD Storage Flipper plugin",
   "scripts": {
     "lint": "flipper-pkg lint",
     "prepack": "flipper-pkg lint && flipper-pkg bundle",
