@@ -16,7 +16,15 @@ Similarly to other Flipper plugins for React Native, this one comes in two packa
 
 The first package is a client package that has to be installed in your React Native app.
 
-#### Install the pakage
+#### Install the package
+
+If you haven't already installed `react-native-flipper` you need to do it now.
+
+Simply run:
+
+`npm i react-native-flipper --save`
+
+Once the react-native-flipper package is installed, you can go ahead and install the actual rn-flipper-async-storage-advanced package.
 
 `npm i rn-flipper-async-storage-advanced --save`
 

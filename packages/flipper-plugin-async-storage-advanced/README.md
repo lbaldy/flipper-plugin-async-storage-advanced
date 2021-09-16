@@ -1,11 +1,9 @@
 # `flipper-plugin-async-storage-advanced`
 
-> TODO: description
+This is a Flipper plugin for debugging Async Storage in React Native apps.
 
-## Usage
+Simply install it from your Flipper plugin search.
 
-```
-const flipperPluginAsyncStorageAdvanced = require('flipper-plugin-async-storage-advanced');
+It has to go together with the `rn-flipper-async-storage-advanced` package. For more details please refer to the main repo's [README](https://github.com/lbaldy/flipper-plugin-async-storage-advanced)
 
-// TODO: DEMONSTRATE API
-```
+or to the `rn-flipper-async-storage-advanced` [README](https://github.com/lbaldy/flipper-plugin-async-storage-advanced/blob/main/packages/rn-flipper-async-storage-advanced/README.md)
