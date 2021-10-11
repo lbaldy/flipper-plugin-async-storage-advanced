@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "antd": "latest",
-    "flipper-plugin": "0.100.0"
+    "flipper-plugin": "*"
   },
   "devDependencies": {
     "@babel/preset-react": "latest",
@@ -34,8 +34,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "antd": "latest",
-    "flipper-pkg": "0.100.0",
-    "flipper-plugin": "0.100.0",
+    "flipper-pkg": "*",
+    "flipper-plugin": "*",
     "jest": "latest",
     "typescript": "latest"
   },
