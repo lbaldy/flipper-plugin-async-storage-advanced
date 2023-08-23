@@ -42,6 +42,8 @@ export function Component() {
   const [newItemKey, setNewItemKey] = useState('');
   const [newItemValue, setItemValue] = useState('');
 
+  const [keyFilter, setKeyFilter] = useState<RegExp | undefined>();
+
   const [highlightedKey, setHighlightedKey] = useState('');
   const [highlightedValue, setHighlightedValue] = useState('');
   const [highlightedType, setHighlightedType] = useState('');
@@ -100,8 +102,17 @@ export function Component() {
       </Layout.Container>
 
       <Layout.Container style={{ display: 'flex', borderWidth: 1, padding: 20, margin: 10 }}>
-        <Text style={{ marginBottom: 20, fontSize: 18 }}>Local storage items</Text>
-        {data.map((d) => {
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, fontSize: 18 }}>
+          <Text>Local storage items</Text>
+          <Input style={{ width: '25%' }} placeholder="Filter by key..." onChange={(e) => { setKeyFilter(new RegExp(e.target.value, 'i')) }} />
+        </div>
+        {data
+          .filter((d) => {
+            if(!keyFilter) return d
+
+            return keyFilter.test(d.id)
+          })
+          .map((d) => {
 
           return (
             <Row style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
