@@ -42,5 +42,6 @@
   "dependencies": {
     "immutability-helper": "^3.1.1",
     "lodash": "^4.17.21"
-  }
+  },
+  "gitHead": "845c70c601011df1d5893c64cf33b9ef36f0d5af"
 }
