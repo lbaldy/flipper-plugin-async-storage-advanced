@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PluginClient, usePlugin, createState, useValue, Layout } from 'flipper-plugin';
+import { PluginClient, usePlugin, createState, useValue, Layout, DetailSidebar, DataInspector, Panel } from 'flipper-plugin';
 import { Button, Input, Form, Row, } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import update from 'immutability-helper';
@@ -42,7 +42,27 @@ export function Component() {
   const [newItemKey, setNewItemKey] = useState('');
   const [newItemValue, setItemValue] = useState('');
 
+  const [keyFilter, setKeyFilter] = useState<RegExp | undefined>();
+
+  const [highlightedKey, setHighlightedKey] = useState('');
+  const [highlightedValue, setHighlightedValue] = useState('');
+  const [highlightedType, setHighlightedType] = useState('');
+
+  const setHighlight = (d: any) => {
+    setHighlightedKey(d.id)
+
+    const content = JSON.parse(d.content)
+    setHighlightedValue(content)
+
+    if (typeof content === 'object' || Array.isArray(content)) {
+      setHighlightedType('json')
+    } else {
+      setHighlightedType('text')
+    }
+  }
+
   return (
+    <>
     <Layout.ScrollContainer>
       <Layout.Container style={{ display: 'flex', flexDirection: 'row', marginBottom: 10, padding: 10 }}>
         <Button onClick={() => instance.refresh()} style={{ ...buttonStyle, marginLeft: 0 }}>Refresh</Button>
@@ -82,13 +102,22 @@ export function Component() {
       </Layout.Container>
 
       <Layout.Container style={{ display: 'flex', borderWidth: 1, padding: 20, margin: 10 }}>
-        <Text style={{ marginBottom: 20, fontSize: 18 }}>Local storage items</Text>
-        {data.map((d) => {
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20, fontSize: 18 }}>
+          <Text>Local storage items</Text>
+          <Input style={{ width: '25%' }} placeholder="Filter by key..." onChange={(e) => { setKeyFilter(new RegExp(e.target.value, 'i')) }} />
+        </div>
+        {data
+          .filter((d) => {
+            if(!keyFilter) return d
+
+            return keyFilter.test(d.id)
+          })
+          .map((d) => {
 
           return (
             <Row style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
               <Layout.Container style={{ display: 'flex', flex: 0.3, alignItems: 'center' }}>
-                <Text style={{ flex: 1 }}>Key: {d.id}</Text>
+                <Text style={{ flex: 1 }} onClick={() => setHighlight(d)}>Key: {d.id}</Text>
               </Layout.Container>
               <Layout.Container style={{ display: 'flex', flex: 0.6, alignItems: 'center' }}>
                 <Input
@@ -126,5 +155,23 @@ export function Component() {
         }
       </Layout.Container>
     </Layout.ScrollContainer >
+    {
+      highlightedValue && <DetailSidebar>
+        <Panel title={highlightedKey}>
+            { highlightedType === 'json' && (
+              <DataInspector
+                  data={highlightedValue}
+                  expandRoot={true}
+              />
+            )}
+            { highlightedType === 'text' && (
+              <Text>
+                {highlightedValue}
+              </Text>
+          )}
+        </Panel>
+      </DetailSidebar>
+    }
+  </>
   );
 }
