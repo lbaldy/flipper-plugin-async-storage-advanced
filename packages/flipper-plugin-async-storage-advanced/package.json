@@ -2,7 +2,7 @@
   "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
   "name": "flipper-plugin-async-storage-advanced",
   "id": "FlipperAsyncStorageAdvanced",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "pluginType": "client",
   "main": "dist/bundle.js",
   "flipperBundlerEntry": "src/index.tsx",
